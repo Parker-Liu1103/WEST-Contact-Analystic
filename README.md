@@ -1,4 +1,4 @@
-# MEAN stack Contact Analystics
+# MEAN stack Contact Analytics
 login and registration page for angular with interceptor using JSON web token 
 
 
