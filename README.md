@@ -16,3 +16,6 @@ Then do 'npm serve -o', the project will be opened automatically in the browser.
 For the Contact List part, do same as above.
 
 BTW this project is based on MongoDB, before starting this server, you need to check the Mongodb address in you computer to reassign the database address accordingly.
+
+Environment: 
+HTML5, CSS3, Angular 4, JavaScript, ES6, VS code v1.47.3, GIT, Bootstrap4, Angular Fusion Charts, MongoDB, GitHub.
