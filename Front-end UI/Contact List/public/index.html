@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap-theme.min.css">
+<script src="controllers/controller.js"></script>
+</head>
+<body style="font-family:Arial, Helvetica, sans-serif">
+
+    <div class="container" ng-controller="AppCtrl">
+        <h1>Contact List App</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Number</th>
+                    <th>Action</th>
+                    <!-- <th>&nbsp;</th> -->
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="text" class="form-control" ng-model="contact.name"></td>
+                    <td><input type="text" class="form-control" ng-model="contact.email"></td>
+                    <td><input type="text" class="form-control" ng-model="contact.number"></td>
+                    <td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+                    <td><button class="btn btn-info" ng-click="update()">Update</button></td>
+                </tr>
+                <tr ng-repeat="contact in contactlist"> 
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email | uppercase}}</td>
+                    <td>{{contact.number}}</td>
+                    <td><button class="btn btn-danger" ng-click="remove(contact._id)">Remove</button></td>
+                    <td><button class="btn btn-warning" ng-click="edit(contact._id)">Edit</button></td>
+                   
+                </tr>
+                
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
