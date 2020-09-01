@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.2/angular.min.js"></script>
+    <!-- Step 2 - Including the fusioncharts core library -->
+    <script type="text/javascript" src="https://cdn.fusioncharts.com/fusioncharts/latest/fusioncharts.js"></script>
+    <!-- Step 3 - Including the angularjs-fusioncharts directive-->
+    <script type="text/javascript" src="angular-fusioncharts.js"></script>
+    <!-- Step 4 - Including the fusion theme -->
+    <script type="text/javascript"
+        src="https://cdn.fusioncharts.com/fusioncharts/latest/themes/fusioncharts.theme.fusion.js"></script>
+    <title>Document</title>
+</head>
+
+<body ng-app="fusioncharts-demo">
+    <div ng-controller="chartController">
+        <fusioncharts datasource="{{myDatasource}}" type="pie3d" height="400" width="600"></fusioncharts>
+
+    </div>
+    <script>
+        var app = angular.module("fusioncharts-demo", ['ng-fusioncharts']);
+        app.controller("chartController", function($scope, $rootScope) {
+            $scope.myDatasource = {
+                chart: {
+                    caption: "Avg talk times for different departments",
+                    subcaption: "Last Year",
+                    startingangle: "120",
+                    showlabels: "0",
+                    showlegend: "1",
+                    enablemultislicing: "0",
+                    slicingdistance: "15",
+                    showpercentvalues: "1",
+                    showpercentintooltip: "0",
+                    plottooltext: "Age group: $label Total visits: $datavalue",
+                    theme: "fint"
+                },
+                data: [{
+                    label: "Production",
+                    value: "231243"
+                },
+                {
+                    label: "HR Management",
+                    value: "45757"
+                },
+                {
+                    label: "Research and Development",
+                    value: "4325"
+                },
+                {
+                    label: "Account and Finance",
+                    value: "9789"
+                }
+            ]}
+        })
+    </script>
+</body>
+
+</html>
